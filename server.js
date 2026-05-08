@@ -42,6 +42,7 @@ app.post("/help", (req, res) => {
 });
 
 
-app.listen(5000, () => {
-    console.log("Server running on port 5000");
+app.listen(3001, () => {
+    console.log("Server running on port 3001");
 });
+const mongodb_url="mongodb+srv://cluster0.thgs63l.mongodb.net/demo"
