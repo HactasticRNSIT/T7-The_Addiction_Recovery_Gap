@@ -23,8 +23,7 @@ document.querySelectorAll('.card').forEach(card => {
 // Fetch statistics from backend
 async function loadStats() {
 
-    const response = await fetch("https://t7-the-addiction-recovery-gap-1.onrender.com");
-
+    const response = await fetch("http://localhost:3001/stats");
     const data = await response.json();
 
     console.log(data);
