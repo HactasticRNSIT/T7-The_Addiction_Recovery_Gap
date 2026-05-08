@@ -156,7 +156,6 @@
 
   </div>
 
-
   <!-- CREATE ACCOUNT PAGE -->
 
   <div class="container page" id="createAccountPage">
@@ -186,7 +185,6 @@
 
   </div>
 
-
   <!-- USER DETAILS PAGE -->
 
   <div class="container page" id="userDetailsPage">
@@ -199,18 +197,18 @@
 
     <div class="input-box">
       <label>Full Name</label>
-      <input type="text" placeholder="Enter full name">
+      <input type="text" id="fullName" placeholder="Enter full name">
     </div>
 
     <div class="input-box">
       <label>Age</label>
-      <input type="number" placeholder="Enter age">
+      <input type="number" id="age" placeholder="Enter age">
     </div>
 
     <div class="input-box">
       <label>Gender</label>
 
-      <select>
+      <select id="gender">
         <option>Select Gender</option>
         <option>Male</option>
         <option>Female</option>
@@ -220,12 +218,12 @@
 
     <div class="input-box">
       <label>Email Address</label>
-      <input type="email" placeholder="Enter email">
+      <input type="email" id="email" placeholder="Enter email">
     </div>
 
     <div class="input-box">
       <label>Phone Number</label>
-      <input type="tel" placeholder="Enter phone number">
+      <input type="tel" id="phone" placeholder="Enter phone number">
     </div>
 
     <button class="btn" onclick="saveData()">
@@ -234,90 +232,9 @@
 
   </div>
 
+  <!-- LINK SCRIPT FILE -->
 
-  <script>
-
-    let savedUsername = "";
-    let savedPassword = "";
-
-    function openCreateAccount(){
-
-      document.getElementById("loginPage").style.display = "none";
-      document.getElementById("createAccountPage").style.display = "block";
-
-    }
-
-    function createAccount(){
-
-      let username =
-        document.getElementById("createUsername").value;
-
-      let password =
-        document.getElementById("createPassword").value;
-
-      let confirmPassword =
-        document.getElementById("confirmPassword").value;
-
-      if(username === "" || password === "" || confirmPassword === ""){
-
-        document.getElementById("createMessage").innerHTML =
-        "Please fill all fields";
-
-      }
-
-      else if(password !== confirmPassword){
-
-        document.getElementById("createMessage").innerHTML =
-        "Passwords do not match";
-
-      }
-
-      else{
-
-        savedUsername = username;
-        savedPassword = password;
-
-        alert("Account Created Successfully");
-
-        document.getElementById("createAccountPage").style.display = "none";
-        document.getElementById("loginPage").style.display = "block";
-
-      }
-
-    }
-
-    function loginUser(){
-
-      let loginUsername =
-        document.getElementById("loginUsername").value;
-
-      let loginPassword =
-        document.getElementById("loginPassword").value;
-
-      if(loginUsername === savedUsername &&
-         loginPassword === savedPassword){
-
-        document.getElementById("loginPage").style.display = "none";
-        document.getElementById("userDetailsPage").style.display = "block";
-
-      }
-
-      else{
-
-        document.getElementById("loginMessage").innerHTML =
-        "Wrong password or username. Try again.";
-
-      }
-
-    }
-
-    function saveData(){
-
-      alert("User data saved successfully ✔");
-
-    }
-
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
